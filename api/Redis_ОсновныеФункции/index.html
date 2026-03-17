@@ -1,0 +1,987 @@
+<!doctype html>
+<html lang="ru" dir="ltr" class="docs-wrapper plugin-docs plugin-id-api docs-version-current docs-doc-page docs-doc-id-Redis_ОсновныеФункции" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Redis_ОсновныеФункции | 1С Предприятие. Работа с сервером Redis</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://zerobig.github.io/redis-1c/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://zerobig.github.io/redis-1c/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://zerobig.github.io/redis-1c/api/Redis_ОсновныеФункции"><meta data-rh="true" property="og:locale" content="ru"><meta data-rh="true" name="docusaurus_locale" content="ru"><meta data-rh="true" name="docsearch:language" content="ru"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-api-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-api-current"><meta data-rh="true" property="og:title" content="Redis_ОсновныеФункции | 1С Предприятие. Работа с сервером Redis"><meta data-rh="true" name="description" content="Методы модуля"><meta data-rh="true" property="og:description" content="Методы модуля"><link data-rh="true" rel="icon" href="/redis-1c/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://zerobig.github.io/redis-1c/api/Redis_ОсновныеФункции"><link data-rh="true" rel="alternate" href="https://zerobig.github.io/redis-1c/api/Redis_ОсновныеФункции" hreflang="ru"><link data-rh="true" rel="alternate" href="https://zerobig.github.io/redis-1c/api/Redis_ОсновныеФункции" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Redis_ОсновныеФункции","item":"https://zerobig.github.io/redis-1c/api/Redis_ОсновныеФункции"}]}</script><link rel="stylesheet" href="/redis-1c/assets/css/styles.b0092fe2.css">
+<script src="/redis-1c/assets/js/runtime~main.7290f652.js" defer="defer"></script>
+<script src="/redis-1c/assets/js/main.eb22e091.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/redis-1c/img/logo.svg"><div role="region" aria-label="Перейти к основному содержимому"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Перейти к основному содержимому</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Переключить навигационную панель" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/redis-1c/"><div class="navbar__logo"><img src="/redis-1c/img/logo.svg" alt="Логотип" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/redis-1c/img/logo.svg" alt="Логотип" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">1С Предприятие. Работа с сервером Redis</b></a><a class="navbar__item navbar__link" href="/redis-1c/docs/getting-started/">Начало работы</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/redis-1c/api/OPI_TCP">API</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/zerobig/redis-1c" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Переключение между темным и светлым режимом (сейчас используется system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Прокрутка к началу" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/redis-1c/api/OPI_TCP"><span title="OPI_TCP" class="linkLabel_WmDU">OPI_TCP</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/redis-1c/api/Redis_ОсновныеФункции"><span title="Redis_ОсновныеФункции" class="linkLabel_WmDU">Redis_ОсновныеФункции</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/redis-1c/api/Redis_Служебный"><span title="Redis_Служебный" class="linkLabel_WmDU">Redis_Служебный</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Навигационная цепочка текущей страницы"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Главная страница" class="breadcrumbs__link" href="/redis-1c/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Redis_ОсновныеФункции</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">Содержание этой страницы</button></div><div class="theme-doc-markdown markdown"><header><h1>Redis основные функции (Redis_ОсновныеФункции)</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="методы-модуля">Методы модуля<a href="#методы-модуля" class="hash-link" aria-label="Прямая ссылка на Методы модуля" title="Прямая ссылка на Методы модуля" translate="no">​</a></h2>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="получитьсоединение"><code>ПолучитьСоединение</code><a href="#получитьсоединение" class="hash-link" aria-label="Прямая ссылка на получитьсоединение" title="Прямая ссылка на получитьсоединение" translate="no">​</a></h3>
+<p>Создает и возвращает новое соединение с сервером Redis. При необходимости производит аутентификацию</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+</li>
+</ul>
+<p><strong>Возвращает</strong></p>
+<p><code>Неопределено</code> - Объект TCP клиента при успешном начале транзакции или Неопределено в случае ошибки</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="закрытьсоединение"><code>ЗакрытьСоединение</code><a href="#закрытьсоединение" class="hash-link" aria-label="Прямая ссылка на закрытьсоединение" title="Прямая ссылка на закрытьсоединение" translate="no">​</a></h3>
+<p>Завершает работу соединения с сервером Redis</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class=""><code>Соединение</code>
+<ul>
+<li class=""><code>Произвольный</code> - Объект TCP клиента</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="проверкадоступности"><code>ПроверкаДоступности</code><a href="#проверкадоступности" class="hash-link" aria-label="Прямая ссылка на проверкадоступности" title="Прямая ссылка на проверкадоступности" translate="no">​</a></h3>
+<p>Проверяет доступность сервера Redis по переданным параметрам или по существующему соединению</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+<ul>
+<li class=""><code>Произвольный</code> - Объект TCP клиента когда команда вызывается для ранее
+установленного соединения</li>
+</ul>
+</li>
+</ul>
+<p><strong>Возвращает</strong></p>
+<p><code>Булево</code> - Истина если удалось установить соединение с сервером Redis, ложь - от сервера не был
+получен корректный ответ</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="установитьзначение"><code>УстановитьЗначение</code><a href="#установитьзначение" class="hash-link" aria-label="Прямая ссылка на установитьзначение" title="Прямая ссылка на установитьзначение" translate="no">​</a></h3>
+<p>Устанавливает новое или изменяет существующее значение на сервере Redis с заданным ключом
+При совпадении ключей, данные с типом &quot;Строка&quot; перетирают массивы и хэш-таблицы (структуры
+и соответствия). Но при попытке записать хэш-таблицу поверх строки будет вызвано исключение.
+Это задокументированное поведение Redis.</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+<ul>
+<li class=""><code>Произвольный</code> - Объект TCP клиента когда команда вызывается для ранее
+установленного соединения</li>
+</ul>
+</li>
+<li class="">
+<p><code>Ключ</code></p>
+<ul>
+<li class=""><code>Строка</code> - Ключ с которым будет схранено значение на сервере</li>
+</ul>
+</li>
+<li class="">
+<p><code>Данные</code></p>
+<ul>
+<li class="">
+<p><code>Строка</code> - Строковые данные для помещения в Redis</p>
+</li>
+<li class="">
+<p><code>Массив</code> - Массив строк</p>
+</li>
+<li class="">
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Где:</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Ключ</code> - <code>Строка</code> - Имя поля хэш-таблицы</li>
+<li class=""><code>Значение</code> - <code>Строка</code> - Значение поля хэш-таблицы</li>
+</ul></div></div></details>
+</li>
+<li class="">
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Соответствие</code> - Где:</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Ключ</code> - <code>Строка</code> - Имя поля хэш-таблицы</li>
+<li class=""><code>Значение</code> - <code>Строка</code> - Значение поля хэш-таблицы</li>
+</ul></div></div></details>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Возвращает</strong></p>
+<p><code>Булево</code> - Истина если помещение данных произведено успешно, ложь - значение не было сохранено</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="получитьзначение"><code>ПолучитьЗначение</code><a href="#получитьзначение" class="hash-link" aria-label="Прямая ссылка на получитьзначение" title="Прямая ссылка на получитьзначение" translate="no">​</a></h3>
+<p>Возвращает значение с сервера Redis по ключу
+Если читается хэш-таблица, то имена полей будут проверены на возможность использования в
+структуре и при корректных значениях будет возвращена Структура. В противном случае - Соответствие.
+Для принудительного чтения значения в Соответствие можно использовать функцию ПолучитьХэшТаблицу</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+</li>
+<li class="">
+<p><code>Ключ</code></p>
+<ul>
+<li class=""><code>Строка</code> - Ключ по которому будет запрашиваться значение с сервера</li>
+</ul>
+</li>
+</ul>
+<p><strong>Возвращает</strong></p>
+<p><code>Строка</code> - Значение полученное из сервера Redis.</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="проверитьсуществованиеключа"><code>ПроверитьСуществованиеКлюча</code><a href="#проверитьсуществованиеключа" class="hash-link" aria-label="Прямая ссылка на проверитьсуществованиеключа" title="Прямая ссылка на проверитьсуществованиеключа" translate="no">​</a></h3>
+<p>Проверяет существование на сервере Redis записи с опреденным ключом</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+</li>
+<li class="">
+<p><code>Ключ</code></p>
+<ul>
+<li class=""><code>Строка</code> - Ключ по которому будет осуществляться проверка наличия записи</li>
+</ul>
+</li>
+</ul>
+<p><strong>Возвращает</strong></p>
+<p><code>Булево</code> - Истина если запись с таким ключом существкет, ложь - запись отсутствует</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="найтиключипошаблону"><code>НайтиКлючиПоШаблону</code><a href="#найтиключипошаблону" class="hash-link" aria-label="Прямая ссылка на найтиключипошаблону" title="Прямая ссылка на найтиключипошаблону" translate="no">​</a></h3>
+<p>Находит все ключи на сервере Redis по заданному шаблону</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+<ul>
+<li class=""><code>Произвольный</code> - Объект TCP клиента когда команда вызывается для ранее
+установленного соединения</li>
+</ul>
+</li>
+<li class="">
+<p><code>ШаблонКлюча</code></p>
+<ul>
+<li class=""><code>Строка</code> - Шаблон по которому будет осуществляться поиск ключей. Пример шаблона &quot;user:*&quot;</li>
+</ul>
+</li>
+<li class="">
+<p><code>Асинхронно</code></p>
+<ul>
+<li class=""><code>Булево</code> - Флаг используемой команды. Истина - SCAN, Ложь - KEYS</li>
+</ul>
+</li>
+</ul>
+<p><strong>Возвращает</strong></p>
+<p><code>Массив</code> - найденные ключи удовлетворяющие переданному шаблону</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="удалитьзначение"><code>УдалитьЗначение</code><a href="#удалитьзначение" class="hash-link" aria-label="Прямая ссылка на удалитьзначение" title="Прямая ссылка на удалитьзначение" translate="no">​</a></h3>
+<p>Удаляет значение с сервера Redis по ключу</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+</li>
+<li class="">
+<p><code>Ключ</code></p>
+<ul>
+<li class=""><code>Строка</code> - Ключ по которому будет осуществляться удаление значения</li>
+</ul>
+</li>
+<li class="">
+<p><code>Асинхронно</code></p>
+<ul>
+<li class=""><code>Булево</code> - Флаг используемой команды. Истина - UNLINK, Ложь - DEL</li>
+</ul>
+</li>
+</ul>
+<p><strong>Возвращает</strong></p>
+<p><code>Булево</code> - Истина если удаление произведено успешно, ложь - значение с таким ключом не найдено</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="типданных"><code>ТипДанных</code><a href="#типданных" class="hash-link" aria-label="Прямая ссылка на типданных" title="Прямая ссылка на типданных" translate="no">​</a></h3>
+<p>Возвращает тип данных на сервере Redis по ключу</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+</li>
+<li class="">
+<p><code>Ключ</code></p>
+<ul>
+<li class=""><code>Строка</code> - Ключ по которому будет запрашиваться значение с сервера</li>
+</ul>
+</li>
+</ul>
+<p><strong>Возвращает</strong></p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Данные о результате проверки типа данных для ключа на сервере
+&quot;string&quot;, &quot;list&quot;, &quot;hash&quot;, &quot;json&quot;, &quot;none&quot;</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>ТипДанных</code> - <code>Строка</code> - Тип данных на сервере Redis по данному ключу. Возможные значения:</li>
+<li class=""><code>Соединение</code> - <code>Произвольный</code> - Объект TCP клиента</li>
+</ul></div></div></details>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="очиститьвсе"><code>ОчиститьВсе</code><a href="#очиститьвсе" class="hash-link" aria-label="Прямая ссылка на очиститьвсе" title="Прямая ссылка на очиститьвсе" translate="no">​</a></h3>
+<p>Удаляет все ключи из всех баз данных Redis</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+</li>
+<li class="">
+<p><code>Асинхронно</code></p>
+<ul>
+<li class=""><code>Булево</code> - К команде добавляется флаг ASYNC</li>
+</ul>
+</li>
+</ul>
+<p><strong>Возвращает</strong></p>
+<p><code>Булево</code> - Истина если команда выполнена успешно, ложь - ключи не были удалены</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="получитьвремяжизни"><code>ПолучитьВремяЖизни</code><a href="#получитьвремяжизни" class="hash-link" aria-label="Прямая ссылка на получитьвремяжизни" title="Прямая ссылка на получитьвремяжизни" translate="no">​</a></h3>
+<p>Возвращает оставшееся время жизни (ttl) значения на сервере Redis</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+<ul>
+<li class=""><code>Произвольный</code> - Объект TCP клиента когда команда вызывается для ранее
+установленного соединения</li>
+</ul>
+</li>
+<li class="">
+<p><code>Ключ</code></p>
+<ul>
+<li class=""><code>Строка</code> - Ключ для которого будет получено оставшееся время жизни значения на сервере</li>
+</ul>
+</li>
+</ul>
+<p><strong>Возвращает</strong></p>
+<p><code>Число</code> - Оставшееся время жизни значения на сервере Redis в секундах. 0 - время жизни для</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="установитьвремяжизни"><code>УстановитьВремяЖизни</code><a href="#установитьвремяжизни" class="hash-link" aria-label="Прямая ссылка на установитьвремяжизни" title="Прямая ссылка на установитьвремяжизни" translate="no">​</a></h3>
+<p>Устанавливает время жизни (ttl) значения на сервере Redis</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+<ul>
+<li class=""><code>Произвольный</code> - Объект TCP клиента когда команда вызывается для ранее
+установленного соединения</li>
+</ul>
+</li>
+<li class="">
+<p><code>Ключ</code></p>
+<ul>
+<li class=""><code>Строка</code> - Ключ для которого будет установлено время жизни значения в секундах</li>
+</ul>
+</li>
+<li class="">
+<p><code>ВремяЖизни</code></p>
+<ul>
+<li class=""><code>Число</code> - Время жизни значения на сервере Redis в секундах</li>
+</ul>
+</li>
+</ul>
+<p><strong>Возвращает</strong></p>
+<p><code>Булево</code> - Истина если обновление времени жизни значения произведено успешно, ложь - время жизни не было обновлено</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="установитьстроку"><code>УстановитьСтроку</code><a href="#установитьстроку" class="hash-link" aria-label="Прямая ссылка на установитьстроку" title="Прямая ссылка на установитьстроку" translate="no">​</a></h3>
+<p>Устанавливает новое или изменят существующее значение строкового типа на сервере Redis</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+<ul>
+<li class=""><code>Произвольный</code> - Объект TCP клиента когда команда вызывается для ранее
+установленного соединения</li>
+</ul>
+</li>
+<li class="">
+<p><code>Ключ</code></p>
+<ul>
+<li class=""><code>Строка</code> - Ключ с которым будет схранено значение на сервере</li>
+</ul>
+</li>
+<li class="">
+<p><code>Данные</code></p>
+<ul>
+<li class=""><code>Строка</code> - Строковые данные для помещения в Redis</li>
+</ul>
+</li>
+<li class="">
+<p><code>ВремяЖизни</code></p>
+<ul>
+<li class=""><code>Число</code> - Время жизни значения на сервере Redis в секундах</li>
+</ul>
+</li>
+</ul>
+<p><strong>Возвращает</strong></p>
+<p><code>Булево</code> - Истина если помещение данных произведено успешно, ложь - значение не было сохранено</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="получитьстроку"><code>ПолучитьСтроку</code><a href="#получитьстроку" class="hash-link" aria-label="Прямая ссылка на получитьстроку" title="Прямая ссылка на получитьстроку" translate="no">​</a></h3>
+<p>Получает строковое значение с сервера Redis по ключу</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+<ul>
+<li class=""><code>Произвольный</code> - Объект TCP клиента когда команда вызывается для ранее
+установленного соединения</li>
+</ul>
+</li>
+<li class="">
+<p><code>Ключ</code></p>
+<ul>
+<li class=""><code>Строка</code> - Ключ по которому будет запрашиваться значение с сервера
+ЗакрыватьСоединение - Булево       -</li>
+</ul>
+</li>
+<li class="">
+<p><code>ЗакрыватьСоединение</code> -</p>
+</li>
+</ul>
+<p><strong>Возвращает</strong></p>
+<p><code>Строка</code> - Значение полученное из сервера Redis</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="добавитьэлементывмассив"><code>ДобавитьЭлементыВМассив</code><a href="#добавитьэлементывмассив" class="hash-link" aria-label="Прямая ссылка на добавитьэлементывмассив" title="Прямая ссылка на добавитьэлементывмассив" translate="no">​</a></h3>
+<p>Добавляет элементы в массив на сервере Redis. В случае если массива с таким ключом не существует,
+то создаёт новое значение</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+</li>
+<li class="">
+<p><code>Ключ</code></p>
+<ul>
+<li class=""><code>Строка</code> - Ключ по которому будет запрашиваться значение с сервера</li>
+</ul>
+</li>
+<li class="">
+<p><code>Данные</code></p>
+<ul>
+<li class=""><code>Массив</code> - Данные для помещения в Redis</li>
+</ul>
+</li>
+<li class="">
+<p><code>МестоДобавления</code></p>
+<ul>
+<li class=""><code>Строка</code> - Признак, добавляются элементы &quot;ВНачало&quot; массива или &quot;ВКонец&quot;</li>
+</ul>
+</li>
+</ul>
+<p><strong>Возвращает</strong></p>
+<p><code>Булево</code> - Истина если помещение данных произведено успешно, ложь - значение не было сохранено</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="получитьмассив"><code>ПолучитьМассив</code><a href="#получитьмассив" class="hash-link" aria-label="Прямая ссылка на получитьмассив" title="Прямая ссылка на получитьмассив" translate="no">​</a></h3>
+<p>Возвращает массив строк с сервера Redis по ключу</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+<ul>
+<li class=""><code>Произвольный</code> - Объект TCP клиента когда команда вызывается для ранее
+установленного соединения</li>
+</ul>
+</li>
+<li class="">
+<p><code>Ключ</code></p>
+<ul>
+<li class=""><code>Строка</code> - Ключ по которому будет запрашиваться значение с сервера
+ЗакрыватьСоединение - Булево       -</li>
+</ul>
+</li>
+<li class="">
+<p><code>ЗакрыватьСоединение</code> -</p>
+</li>
+</ul>
+<p><strong>Возвращает</strong></p>
+<p><code>Массив</code> - Значение полученное из сервера Redis</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="количествострокмассива"><code>КоличествоСтрокМассива</code><a href="#количествострокмассива" class="hash-link" aria-label="Прямая ссылка на количествострокмассива" title="Прямая ссылка на количествострокмассива" translate="no">​</a></h3>
+<p>Возвращает количество строк в массиве БД Redis</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+</li>
+<li class="">
+<p><code>Ключ</code></p>
+<ul>
+<li class=""><code>Строка</code> - Ключ по которому будет запрашиваться значение с сервера</li>
+</ul>
+</li>
+</ul>
+<p><strong>Возвращает</strong></p>
+<p><code>Число</code> - количество элментов в массиве. Неопределено - когда ключ в БД Redis отсутствует</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="получитьстрокумассива"><code>ПолучитьСтрокуМассива</code><a href="#получитьстрокумассива" class="hash-link" aria-label="Прямая ссылка на получитьстрокумассива" title="Прямая ссылка на получитьстрокумассива" translate="no">​</a></h3>
+<p>Возвращает значение строки массива в БД Redis по номеру строки</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+</li>
+<li class="">
+<p><code>Ключ</code></p>
+<ul>
+<li class=""><code>Строка</code> - Ключ по которому будет запрашиваться значение с сервера</li>
+</ul>
+</li>
+<li class="">
+<p><code>НомерСтроки</code></p>
+<ul>
+<li class=""><code>Число</code> - Номер получаемой строки</li>
+</ul>
+</li>
+</ul>
+<p><strong>Возвращает</strong></p>
+<p><code>Строка</code> - значение элемента массива. Неопределено - когда ключ в БД Redis отсутствует</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="удалитьстрокимассива"><code>УдалитьСтрокиМассива</code><a href="#удалитьстрокимассива" class="hash-link" aria-label="Прямая ссылка на удалитьстрокимассива" title="Прямая ссылка на удалитьстрокимассива" translate="no">​</a></h3>
+<p>Удаляет строки массива с сервера Redis по найденным значениям</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+<ul>
+<li class=""><code>Произвольный</code> - Объект TCP клиента</li>
+</ul>
+</li>
+<li class="">
+<p><code>Ключ</code></p>
+<ul>
+<li class=""><code>Строка</code> - Ключ по которому будет запрашиваться массив с сервера</li>
+</ul>
+</li>
+<li class="">
+<p><code>НаправлениеУдаления</code></p>
+<ul>
+<li class=""><code>Число</code> - Управляет количеством удаляемых элементов и направлением операции.
+Если значение больше 0, то удаляет указанное количество первых
+найденных элементов.
+Если значение меньше 0, то удаляет указанное количество воследних найденных
+элементов.
+Если значение равно 0, то удаляет все найденные элементы</li>
+</ul>
+</li>
+<li class="">
+<p><code>ЗначениеЭлемента</code></p>
+<ul>
+<li class=""><code>Строка</code> - Значение для поиска строк которые будут удалены</li>
+</ul>
+</li>
+</ul>
+<p><strong>Возвращает</strong></p>
+<p><code>Число</code> - Количество строк которые были удалены</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="добавитьэлементывхэштаблицу"><code>ДобавитьЭлементыВХэшТаблицу</code><a href="#добавитьэлементывхэштаблицу" class="hash-link" aria-label="Прямая ссылка на добавитьэлементывхэштаблицу" title="Прямая ссылка на добавитьэлементывхэштаблицу" translate="no">​</a></h3>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class=""><code>ПараметрыСоединения</code> -</li>
+<li class=""><code>Ключ</code> -</li>
+<li class=""><code>Данные</code> -</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="получитьхэштаблицу"><code>ПолучитьХэшТаблицу</code><a href="#получитьхэштаблицу" class="hash-link" aria-label="Прямая ссылка на получитьхэштаблицу" title="Прямая ссылка на получитьхэштаблицу" translate="no">​</a></h3>
+<p>Возвращает хэш-таблицу с сервера Redis по ключу</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+<ul>
+<li class=""><code>Произвольный</code> - Объект TCP клиента когда команда вызывается для ранее
+установленного соединения</li>
+</ul>
+</li>
+<li class="">
+<p><code>Ключ</code></p>
+<ul>
+<li class=""><code>Строка</code> - Ключ по которому будет запрашиваться значение с сервера</li>
+</ul>
+</li>
+<li class="">
+<p><code>СохранятьВСтруктуру</code></p>
+<ul>
+<li class=""><code>Булево</code> - Признак того, что данные необходимо по возможности
+сохранить в Структуру. Иначе функция вернёт Соответствие.
+ЗакрыватьСоединение - Булево       -</li>
+</ul>
+</li>
+<li class="">
+<p><code>ЗакрыватьСоединение</code> -</p>
+</li>
+</ul>
+<p><strong>Возвращает</strong></p>
+<p><code>Структура</code> - Значение полученное из сервера Redis</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="количествополейхэштаблицы"><code>КоличествоПолейХэшТаблицы</code><a href="#количествополейхэштаблицы" class="hash-link" aria-label="Прямая ссылка на количествополейхэштаблицы" title="Прямая ссылка на количествополейхэштаблицы" translate="no">​</a></h3>
+<p>Возвращает количество полей в хэш-таблице БД Redis</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+<ul>
+<li class=""><code>Произвольный</code> - Объект TCP клиента когда команда вызывается для ранее
+установленного соединения</li>
+</ul>
+</li>
+<li class="">
+<p><code>Ключ</code></p>
+<ul>
+<li class=""><code>Строка</code> - Ключ по которому будет запрашиваться количество полей с сервера</li>
+</ul>
+</li>
+</ul>
+<p><strong>Возвращает</strong></p>
+<p><code>Число</code> - количество полей в хэш-таблице</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="поляхэштаблицы"><code>ПоляХэшТаблицы</code><a href="#поляхэштаблицы" class="hash-link" aria-label="Прямая ссылка на поляхэштаблицы" title="Прямая ссылка на поляхэштаблицы" translate="no">​</a></h3>
+<p>Возвращает массив наименований полей с сервера Redis по ключу</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+<ul>
+<li class=""><code>Произвольный</code> - Объект TCP клиента когда команда вызывается для ранее
+установленного соединения</li>
+</ul>
+</li>
+<li class="">
+<p><code>Ключ</code></p>
+<ul>
+<li class=""><code>Строка</code> - Ключ по которому будет запрашиваться поля с сервера</li>
+</ul>
+</li>
+</ul>
+<p><strong>Возвращает</strong></p>
+<p><code>Массив</code> - наименования полей хэш-таблицы</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="значениеполяхэштаблицы"><code>ЗначениеПоляХэшТаблицы</code><a href="#значениеполяхэштаблицы" class="hash-link" aria-label="Прямая ссылка на значениеполяхэштаблицы" title="Прямая ссылка на значениеполяхэштаблицы" translate="no">​</a></h3>
+<p>Возвращает значение поля хэш-таблицы в БД Redis по наименованию поля</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+<ul>
+<li class=""><code>Произвольный</code> - Объект TCP клиента когда команда вызывается для ранее
+установленного соединения</li>
+</ul>
+</li>
+<li class="">
+<p><code>Ключ</code></p>
+<ul>
+<li class=""><code>Строка</code> - Ключ по которому будет запрашиваться значение поля с сервера</li>
+</ul>
+</li>
+<li class="">
+<p><code>Поле</code></p>
+<ul>
+<li class=""><code>Строка</code> - Наименование поля для получения значения</li>
+</ul>
+</li>
+</ul>
+<p><strong>Возвращает</strong></p>
+<p><code>Строка</code> - значение поля хэш-таблицы</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="удалитьполяхэштаблицы"><code>УдалитьПоляХэшТаблицы</code><a href="#удалитьполяхэштаблицы" class="hash-link" aria-label="Прямая ссылка на удалитьполяхэштаблицы" title="Прямая ссылка на удалитьполяхэштаблицы" translate="no">​</a></h3>
+<p>Удаляет поля хэш-таблицы с сервера Redis по перечню полей</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+<ul>
+<li class=""><code>Произвольный</code> - Объект TCP клиента когда команда вызывается для ранее
+установленного соединения</li>
+</ul>
+</li>
+<li class="">
+<p><code>Ключ</code></p>
+<ul>
+<li class=""><code>Строка</code> - Ключ по которому будет произведено удаление полей с сервера</li>
+</ul>
+</li>
+<li class="">
+<p><code>Поля</code></p>
+<ul>
+<li class=""><code>Массив</code> - Массив наименований удаляемых полей</li>
+</ul>
+</li>
+</ul>
+<p><strong>Возвращает</strong></p>
+<p><code>Число</code> - количество полей которые были удалены</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="установитьjson"><code>УстановитьJson</code><a href="#установитьjson" class="hash-link" aria-label="Прямая ссылка на установитьjson" title="Прямая ссылка на установитьjson" translate="no">​</a></h3>
+<p>Устанавливает JSON значение для ключа. Данные помещаются в корень JSON</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+<ul>
+<li class=""><code>Произвольный</code> - Объект TCP клиента</li>
+</ul>
+</li>
+<li class="">
+<p><code>Ключ</code></p>
+<ul>
+<li class=""><code>Строка</code> - Ключ по которому будет схранены данные на сервере</li>
+</ul>
+</li>
+<li class="">
+<p><code>Данные</code></p>
+<ul>
+<li class=""><code>Строка</code> - Данные для записи в БД Redis<!-- -->
+<ul>
+<li class="">Число        -</li>
+<li class="">ЗаписьJSON   -</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Возвращает</strong></p>
+<p><code>Булево</code> - Истина если помещение данных произведено успешно, ложь - значение не было сохранено</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="установитьjsonдляпути"><code>УстановитьJsonДляПути</code><a href="#установитьjsonдляпути" class="hash-link" aria-label="Прямая ссылка на установитьjsonдляпути" title="Прямая ссылка на установитьjsonдляпути" translate="no">​</a></h3>
+<p>Устанавливает JSON значение для ключа по конкретному пути JSON. Путь должен существовать</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+<ul>
+<li class=""><code>Произвольный</code> - Объект TCP клиента</li>
+</ul>
+</li>
+<li class="">
+<p><code>Ключ</code></p>
+<ul>
+<li class=""><code>Строка</code> - Ключ по которому будет схранены данные на сервере</li>
+</ul>
+</li>
+<li class="">
+<p><code>Данные</code></p>
+<ul>
+<li class=""><code>Строка</code> - Данные для записи в БД Redis<!-- -->
+<ul>
+<li class="">Число        -</li>
+<li class="">ЗаписьJSON   -</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="">
+<p><code>Путь</code></p>
+<ul>
+<li class=""><code>Строка</code> - Путь для установки данных. Элементы пути отделяются друг от друга точкой</li>
+</ul>
+</li>
+</ul>
+<p><strong>Возвращает</strong></p>
+<p><code>Булево</code> - Истина если помещение данных произведено успешно, ложь - значение не было сохранено</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="получитьjson"><code>ПолучитьJson</code><a href="#получитьjson" class="hash-link" aria-label="Прямая ссылка на получитьjson" title="Прямая ссылка на получитьjson" translate="no">​</a></h3>
+<p>Возвращает JSON значение для ключа. Данные запрашиваются из корня JSON</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+<ul>
+<li class=""><code>Произвольный</code> - Объект TCP клиента</li>
+</ul>
+</li>
+<li class="">
+<p><code>Ключ</code></p>
+<ul>
+<li class=""><code>Строка</code> - Ключ по которому будет прочитаны данные на сервере</li>
+</ul>
+</li>
+</ul>
+<p><strong>Возвращает</strong></p>
+<p><code>ЧтениеJSON</code> -</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="получитьjsonдляпути"><code>ПолучитьJsonДляПути</code><a href="#получитьjsonдляпути" class="hash-link" aria-label="Прямая ссылка на получитьjsonдляпути" title="Прямая ссылка на получитьjsonдляпути" translate="no">​</a></h3>
+<p>Возвращает JSON значение для ключа по конкретному пути JSON. Путь должен существовать</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+<ul>
+<li class=""><code>Произвольный</code> - Объект TCP клиента</li>
+</ul>
+</li>
+<li class="">
+<p><code>Ключ</code></p>
+<ul>
+<li class=""><code>Строка</code> - Ключ по которому будет прочитаны данные на сервере</li>
+</ul>
+</li>
+<li class="">
+<p><code>Путь</code></p>
+<ul>
+<li class=""><code>Строка</code> - Путь для получения данных. Элементы пути отделяются друг от друга точкой</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="начатьтранзакциюredis"><code>НачатьТранзакциюRedis</code><a href="#начатьтранзакциюredis" class="hash-link" aria-label="Прямая ссылка на начатьтранзакциюredis" title="Прямая ссылка на начатьтранзакциюredis" translate="no">​</a></h3>
+<p>Начинает транзакцию и возвращает соединение с сервером Redis для добавления в транзакцию команд</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+</li>
+</ul>
+<p><strong>Возвращает</strong></p>
+<p><code>Строка</code> - Объект TCP клиента при успешном начале транзакции или информацию об ошибке</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="зафиксироватьтранзакциюredis"><code>ЗафиксироватьТранзакциюRedis</code><a href="#зафиксироватьтранзакциюredis" class="hash-link" aria-label="Прямая ссылка на зафиксироватьтранзакциюredis" title="Прямая ссылка на зафиксироватьтранзакциюredis" translate="no">​</a></h3>
+<p>Фиксирует транзакцию и закрывает соединение с сервером Redis</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class=""><code>Соединение</code>
+<ul>
+<li class=""><code>Произвольный</code> - объект TCP клиента, <a href="#%D0%BD%D0%B0%D1%87%D0%B0%D1%82%D1%8C%D1%82%D1%80%D0%B0%D0%BD%D0%B7%D0%B0%D0%BA%D1%86%D0%B8%D1%8Eredis" class="">см. НачатьТранзакциюRedis</a></li>
+</ul>
+</li>
+</ul>
+<p><strong>Возвращает</strong></p>
+<p><code>Строка</code> - Результат выполнения фиксации транзакции</p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="получитьэлементымножества"><code>ПолучитьЭлементыМножества</code><a href="#получитьэлементымножества" class="hash-link" aria-label="Прямая ссылка на получитьэлементымножества" title="Прямая ссылка на получитьэлементымножества" translate="no">​</a></h3>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+<ul>
+<li class=""><code>Произвольный</code> - Объект TCP клиента когда команда вызывается для ранее
+установленного соединения</li>
+</ul>
+</li>
+<li class="">
+<p><code>Ключ</code> -</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="добавитьэлементывупорядоченноемножество"><code>ДобавитьЭлементыВУпорядоченноеМножество</code><a href="#добавитьэлементывупорядоченноемножество" class="hash-link" aria-label="Прямая ссылка на добавитьэлементывупорядоченноемножество" title="Прямая ссылка на добавитьэлементывупорядоченноемножество" translate="no">​</a></h3>
+<p>Добавляет элементы с указанными оценками в упорядоченное множество для заданного ключа</p>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+<ul>
+<li class=""><code>Произвольный</code> - Объект TCP клиента когда команда вызывается для ранее
+установленного соединения</li>
+</ul>
+</li>
+<li class="">
+<p><code>Ключ</code></p>
+<ul>
+<li class=""><code>Строка</code> - Ключ по которому будут схранены данные на сервере</li>
+</ul>
+</li>
+<li class="">
+<p><code>Данные</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Массив Из Структура:</code> - проводится упорядочивание элементов множества</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Оценка</code> - <code>Число</code> - Целое положительное число по значению которого будет</li>
+<li class=""><code>Значение</code> - <code>Строка</code> - Значение элемента множества</li>
+</ul></div></div></details>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="получитьэлементыупорядоченногомножества"><code>ПолучитьЭлементыУпорядоченногоМножества</code><a href="#получитьэлементыупорядоченногомножества" class="hash-link" aria-label="Прямая ссылка на получитьэлементыупорядоченногомножества" title="Прямая ссылка на получитьэлементыупорядоченногомножества" translate="no">​</a></h3>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+<ul>
+<li class=""><code>Произвольный</code> - Объект TCP клиента когда команда вызывается для ранее
+установленного соединения
+Ключ                - Строка       -
+Начало              - Число        -
+Конец               - Число        -
+СОценкой            - Булево       -</li>
+</ul>
+</li>
+<li class="">
+<p><code>Ключ</code> -</p>
+</li>
+<li class="">
+<p><code>Начало</code> -</p>
+</li>
+<li class="">
+<p><code>Конец</code> -</p>
+</li>
+<li class="">
+<p><code>СОценкой</code> -</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="удалитьэлементыизупорядоченногомножества"><code>УдалитьЭлементыИзУпорядоченногоМножества</code><a href="#удалитьэлементыизупорядоченногомножества" class="hash-link" aria-label="Прямая ссылка на удалитьэлементыизупорядоченногомножества" title="Прямая ссылка на удалитьэлементыизупорядоченногомножества" translate="no">​</a></h3>
+<p><strong>Параметры метода</strong></p>
+<ul>
+<li class="">
+<p><code>ПараметрыСоединения</code>
+*</p>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary><p><code>Структура</code> - Параметры для подключения</p></summary><div><div class="collapsibleContent_i85q"><ul>
+<li class=""><code>Адрес</code> - <code>Строка</code> - Адрес сервера Redis</li>
+<li class=""><code>Пароль</code> - <code>Строка</code> - Пароль для подключения к серверу Redis</li>
+</ul></div></div></details>
+<ul>
+<li class=""><code>Произвольный</code> - Объект TCP клиента когда команда вызывается для ранее
+установленного соединения
+Ключ                - Строка           -
+Данные              - Массив Из Строка -</li>
+</ul>
+</li>
+<li class="">
+<p><code>Ключ</code> -</p>
+</li>
+<li class="">
+<p><code>Данные</code> -</p>
+</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Страница документа"><a class="pagination-nav__link pagination-nav__link--prev" href="/redis-1c/api/OPI_TCP"><div class="pagination-nav__sublabel">Предыдущая страница</div><div class="pagination-nav__label">OPI_TCP</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/redis-1c/api/Redis_Служебный"><div class="pagination-nav__sublabel">Следующая страница</div><div class="pagination-nav__label">Redis_Служебный</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#методы-модуля" class="table-of-contents__link toc-highlight">Методы модуля</a><ul><li><a href="#получитьсоединение" class="table-of-contents__link toc-highlight"><code>ПолучитьСоединение</code></a></li><li><a href="#закрытьсоединение" class="table-of-contents__link toc-highlight"><code>ЗакрытьСоединение</code></a></li><li><a href="#проверкадоступности" class="table-of-contents__link toc-highlight"><code>ПроверкаДоступности</code></a></li><li><a href="#установитьзначение" class="table-of-contents__link toc-highlight"><code>УстановитьЗначение</code></a></li><li><a href="#получитьзначение" class="table-of-contents__link toc-highlight"><code>ПолучитьЗначение</code></a></li><li><a href="#проверитьсуществованиеключа" class="table-of-contents__link toc-highlight"><code>ПроверитьСуществованиеКлюча</code></a></li><li><a href="#найтиключипошаблону" class="table-of-contents__link toc-highlight"><code>НайтиКлючиПоШаблону</code></a></li><li><a href="#удалитьзначение" class="table-of-contents__link toc-highlight"><code>УдалитьЗначение</code></a></li><li><a href="#типданных" class="table-of-contents__link toc-highlight"><code>ТипДанных</code></a></li><li><a href="#очиститьвсе" class="table-of-contents__link toc-highlight"><code>ОчиститьВсе</code></a></li><li><a href="#получитьвремяжизни" class="table-of-contents__link toc-highlight"><code>ПолучитьВремяЖизни</code></a></li><li><a href="#установитьвремяжизни" class="table-of-contents__link toc-highlight"><code>УстановитьВремяЖизни</code></a></li><li><a href="#установитьстроку" class="table-of-contents__link toc-highlight"><code>УстановитьСтроку</code></a></li><li><a href="#получитьстроку" class="table-of-contents__link toc-highlight"><code>ПолучитьСтроку</code></a></li><li><a href="#добавитьэлементывмассив" class="table-of-contents__link toc-highlight"><code>ДобавитьЭлементыВМассив</code></a></li><li><a href="#получитьмассив" class="table-of-contents__link toc-highlight"><code>ПолучитьМассив</code></a></li><li><a href="#количествострокмассива" class="table-of-contents__link toc-highlight"><code>КоличествоСтрокМассива</code></a></li><li><a href="#получитьстрокумассива" class="table-of-contents__link toc-highlight"><code>ПолучитьСтрокуМассива</code></a></li><li><a href="#удалитьстрокимассива" class="table-of-contents__link toc-highlight"><code>УдалитьСтрокиМассива</code></a></li><li><a href="#добавитьэлементывхэштаблицу" class="table-of-contents__link toc-highlight"><code>ДобавитьЭлементыВХэшТаблицу</code></a></li><li><a href="#получитьхэштаблицу" class="table-of-contents__link toc-highlight"><code>ПолучитьХэшТаблицу</code></a></li><li><a href="#количествополейхэштаблицы" class="table-of-contents__link toc-highlight"><code>КоличествоПолейХэшТаблицы</code></a></li><li><a href="#поляхэштаблицы" class="table-of-contents__link toc-highlight"><code>ПоляХэшТаблицы</code></a></li><li><a href="#значениеполяхэштаблицы" class="table-of-contents__link toc-highlight"><code>ЗначениеПоляХэшТаблицы</code></a></li><li><a href="#удалитьполяхэштаблицы" class="table-of-contents__link toc-highlight"><code>УдалитьПоляХэшТаблицы</code></a></li><li><a href="#установитьjson" class="table-of-contents__link toc-highlight"><code>УстановитьJson</code></a></li><li><a href="#установитьjsonдляпути" class="table-of-contents__link toc-highlight"><code>УстановитьJsonДляПути</code></a></li><li><a href="#получитьjson" class="table-of-contents__link toc-highlight"><code>ПолучитьJson</code></a></li><li><a href="#получитьjsonдляпути" class="table-of-contents__link toc-highlight"><code>ПолучитьJsonДляПути</code></a></li><li><a href="#начатьтранзакциюredis" class="table-of-contents__link toc-highlight"><code>НачатьТранзакциюRedis</code></a></li><li><a href="#зафиксироватьтранзакциюredis" class="table-of-contents__link toc-highlight"><code>ЗафиксироватьТранзакциюRedis</code></a></li><li><a href="#получитьэлементымножества" class="table-of-contents__link toc-highlight"><code>ПолучитьЭлементыМножества</code></a></li><li><a href="#добавитьэлементывупорядоченноемножество" class="table-of-contents__link toc-highlight"><code>ДобавитьЭлементыВУпорядоченноеМножество</code></a></li><li><a href="#получитьэлементыупорядоченногомножества" class="table-of-contents__link toc-highlight"><code>ПолучитьЭлементыУпорядоченногоМножества</code></a></li><li><a href="#удалитьэлементыизупорядоченногомножества" class="table-of-contents__link toc-highlight"><code>УдалитьЭлементыИзУпорядоченногоМножества</code></a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Документация</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/redis-1c/docs/getting-started">Начало</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Обратная связь</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/redis-1c" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/zerobig/redis-1c/issues" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub Issues<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Ещё</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/zerobig/redis-1c" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Бушин Илья. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

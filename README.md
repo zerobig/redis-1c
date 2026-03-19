@@ -1,5 +1,7 @@
 # 1С Предприятие. Работа с сервером Redis
 
+[![OpenYellow](https://openyellow.openintegrations.dev/data/badges/1184725125.svg)](https://openyellow.org/grid?filter=top&repo=1184725125)
+
 ## Мотивация
 
 Потребовалось мне в одном проекте быстрое кэширование данных. Ну и понеслось...

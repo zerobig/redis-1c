@@ -12,7 +12,7 @@ slug: /
 ## Благодарности
 
 * [OpenIntegrations](https://github.com/Bayselonarrend/OpenIntegrations) - очень удачная внешняя компонента для работы с TCP из 1С Предприятия
-- [YAxUnit](https://github.com/bia-technologies/yaxunit)
+* [YAxUnit](https://github.com/bia-technologies/yaxunit)
 
 ## Лицензия
 

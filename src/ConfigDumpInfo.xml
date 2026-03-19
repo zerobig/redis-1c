@@ -25,6 +25,6 @@
 		<Metadata name="DataProcessor.Redis_КонсольДанных.Form.Форма.Form" id="c3865bcb-7db1-4c8f-bd32-e167d0b6e921.0" configVersion="827a77dc741216d083893d082c0bcc075967ad03"/>
 		<Metadata name="Language.Русский" id="1022d67e-87e6-41c1-842c-fb4d887854ed" configVersion="99e4825d40142a0378f7df0d36f60a233e3b36b3"/>
 		<Metadata name="Role.Redis_ОсновнаяРоль" id="22499c11-0bc0-4f47-a8e8-3b4c89204199" configVersion="9770168fc0ee0a825f42010bf2088c309719b551"/>
-		<Metadata name="Subsystem.Redis_ОсновнаяПодсистема" id="fe397efb-e5c0-4ee5-becd-70ac0c2a70fa" configVersion="f680f749b336e7a17287779d7b63a6562fcc3816"/>
+		<Metadata name="Subsystem.Redis_ОсновнаяПодсистема" id="fe397efb-e5c0-4ee5-becd-70ac0c2a70fa" configVersion="607a3e8efebf016ad039a50505947746f82d9db4"/>
 	</ConfigVersions>
 </ConfigDumpInfo>

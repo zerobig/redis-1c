@@ -2,7 +2,7 @@
 <ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.20">
 	<ConfigVersions>
 		<Metadata name="CommonModule.OPI_TCP" id="34fd2e5b-026a-40b6-b776-e6dc29dded1a" configVersion="f25fbcb50cdbec0e85d16a35eee2a74ff1e2ca42"/>
-		<Metadata name="CommonModule.OPI_TCP.Module" id="34fd2e5b-026a-40b6-b776-e6dc29dded1a.0" configVersion="f22dbc17adb9a39dff6f590dfccb37fc014c7241"/>
+		<Metadata name="CommonModule.OPI_TCP.Module" id="34fd2e5b-026a-40b6-b776-e6dc29dded1a.0" configVersion="aea5df3c885f3cf02e6fad3aad04baf93377a1ea"/>
 		<Metadata name="CommonModule.OPI_Инструменты" id="0341b1cc-5d16-476a-9c26-43f00189cbae" configVersion="625e0a4116a0874ba34db5910f08b3c817818727"/>
 		<Metadata name="CommonModule.OPI_Инструменты.Module" id="0341b1cc-5d16-476a-9c26-43f00189cbae.0" configVersion="205fe827972fff00b53199c114bef3da18bb44ff"/>
 		<Metadata name="CommonModule.OPI_Компоненты" id="8ac858fa-a65d-4655-b78d-5934a6f0d667" configVersion="723ef341eada88a2bfa249f63f7ab5bb3a08f2de"/>
@@ -14,7 +14,7 @@
 		<Metadata name="CommonModule.Redis_ОсновныеФункцииТесты" id="223e1be9-10e9-4547-a7fb-4e29eb2165be" configVersion="6a092ea6c7d1bebe7714c191e6e7b22186d496fa"/>
 		<Metadata name="CommonModule.Redis_ОсновныеФункцииТесты.Module" id="223e1be9-10e9-4547-a7fb-4e29eb2165be.0" configVersion="ee1affbdc9f9554da48bf8dc5edbad4e47f3bb60"/>
 		<Metadata name="CommonModule.Redis_Служебный" id="af28383f-477e-4b87-abb5-3e7fcc620867" configVersion="38c72d54717e186418a07891332516b8181377ba"/>
-		<Metadata name="CommonModule.Redis_Служебный.Module" id="af28383f-477e-4b87-abb5-3e7fcc620867.0" configVersion="e2da302f72bf34e66491a9aebd2f496fbcb4a0e6"/>
+		<Metadata name="CommonModule.Redis_Служебный.Module" id="af28383f-477e-4b87-abb5-3e7fcc620867.0" configVersion="ee289880c22559e5877ae17d940067a24440aa5e"/>
 		<Metadata name="CommonPicture.Redis_ТипыДанных" id="d194c522-2288-4930-b34f-58456626bd6d" configVersion="317fa9cebf0c60d11d8743800f91c504fe52f2a4"/>
 		<Metadata name="CommonPicture.Redis_ТипыДанных.Picture" id="d194c522-2288-4930-b34f-58456626bd6d.0" configVersion="714039dfa6e70b9569b893f5b91b12f5f8de38a5"/>
 		<Metadata name="CommonTemplate.OPI_TCPClient" id="b5e962a4-f562-4c29-8303-f57fb7d069a0" configVersion="3bd12208ba984c6de74b1e4835b49fa30b3c1210"/>

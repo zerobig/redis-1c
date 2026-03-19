@@ -42,7 +42,7 @@
 //@skip-check wrong-string-literal-content
 //@skip-check method-too-many-params
 
-#Область ПрограммныйИнтерфейс
+#Область СлужебныйПрограммныйИнтерфейс
 
 #Область МетодыКлиента
 
